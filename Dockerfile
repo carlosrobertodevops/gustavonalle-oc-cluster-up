@@ -1,4 +1,5 @@
-ARG ORIGIN_COMMIT=b7cbf1f45d4
+# ARG ORIGIN_COMMIT=b7cbf1f45d4
+ARG ORIGIN_COMMIT=bdd961c3516e71763507806467ff5ace929a392a
 ARG CONSOLE_COMMIT=master
 ARG OLM_COMMIT=dfcd93b3730f1f
 ARG REGISTRY_COMMIT=2693199a9
@@ -56,7 +57,7 @@ RUN rsync -r --exclude '.git' --exclude '_output/local/bin/linux/amd64/openshift
 
 FROM base-os 
 
-MAINTAINER gustavonalle@gmail.com
+MAINTAINER carlos.roberto.devops@gmail.com
 
 COPY --from=console /console /console
 

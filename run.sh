@@ -6,8 +6,8 @@ set -e
 NODES=${NODES:=1}
 
 # Pull dependend images
-docker pull gustavonalle/openshift-dind-node
-docker pull gustavonalle/openshift-dind-master
+docker pull carlosrobertodevops/openshift-dind-node
+docker pull carlosrobertodevops/openshift-dind-master
 
 # Start the cluster
 hack/dind-cluster.sh start -N $NODES

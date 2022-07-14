@@ -9,9 +9,9 @@ index dcd1a9aca4..86b462317e 100755
 -os::build::image openshift/dind        "${OS_ROOT}/images/dind"
 -os::build::image openshift/dind-node   "${OS_ROOT}/images/dind/node"
 -os::build::image openshift/dind-master "${OS_ROOT}/images/dind/master"
-+os::build::image gustavonalle/openshift-dind        "${OS_ROOT}/images/dind"
-+os::build::image gustavonalle/openshift-dind-node   "${OS_ROOT}/images/dind/node"
-+os::build::image gustavonalle/openshift-dind-master "${OS_ROOT}/images/dind/master"
++os::build::image carlosrobertodevops/openshift-dind        "${OS_ROOT}/images/dind"
++os::build::image carlosrobertodevops/openshift-dind-node   "${OS_ROOT}/images/dind/node"
++os::build::image carlosrobertodevops/openshift-dind-master "${OS_ROOT}/images/dind/master"
 diff --git a/hack/dind-cluster.sh b/hack/dind-cluster.sh
 index 71381efb5c..a840fb61eb 100755
 --- a/hack/dind-cluster.sh
@@ -21,7 +21,7 @@ index 71381efb5c..a840fb61eb 100755
    # due to its having sysctl installed.
    ${DOCKER_CMD} run --privileged --net=host --rm -v /lib/modules:/lib/modules \
 -                openshift/dind-node bash -e -c \
-+                gustavonalle/openshift-dind-node bash -e -c \
++                carlosrobertodevops/openshift-dind-node bash -e -c \
                  '/usr/sbin/modprobe openvswitch;
                  /usr/sbin/modprobe overlay 2> /dev/null || true;'
  
@@ -32,9 +32,9 @@ index 71381efb5c..a840fb61eb 100755
 -BASE_IMAGE="openshift/dind"
 -NODE_IMAGE="openshift/dind-node"
 -MASTER_IMAGE="openshift/dind-master"
-+BASE_IMAGE="gustavonalle/openshift-dind"
-+NODE_IMAGE="gustavonalle/openshift-dind-node"
-+MASTER_IMAGE="gustavonalle/openshift-dind-master"
++BASE_IMAGE="carlosrobertodevops/openshift-dind"
++NODE_IMAGE="carlosrobertodevops/openshift-dind-node"
++MASTER_IMAGE="carlosrobertodevops/openshift-dind-master"
  ADDITIONAL_ARGS=""
  
  OVN_ROOT="${OVN_ROOT:-}"
@@ -58,7 +58,7 @@ index aa0653ab30..2a45094143 100644
  #
  
 -FROM openshift/dind-node
-+FROM gustavonalle/openshift-dind-node
++FROM carlosrobertodevops/openshift-dind-node
  
  RUN ln -sf /data/openshift /usr/local/bin/ && \
      ln -sf /data/hypershift /usr/local/bin/
@@ -71,7 +71,7 @@ index 5cef27e46c..c8dcbab490 100644
  #
  
 -FROM openshift/dind
-+FROM gustavonalle/openshift-dind
++FROM carlosrobertodevops/openshift-dind
  
  ## Install packages
  RUN dnf -y update && dnf -y install\

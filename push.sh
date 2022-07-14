@@ -1,3 +1,3 @@
-docker push gustavonalle/oc-cluster-up
-docker push gustavonalle/openshift-dind-master
-docker push gustavonalle/openshift-dind-node
+docker push carlosrobertodevops/oc-cluster-up
+docker push carlosrobertodevops/openshift-dind-master
+docker push carlosrobertodevops/openshift-dind-node
