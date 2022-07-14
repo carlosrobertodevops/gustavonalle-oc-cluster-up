@@ -24,7 +24,7 @@ RUN dnf -y install docker findutils golang jq && dnf clean all
 
 FROM base-os as builder
 
-RUN dnf -y install git which sudo krb5-devel jq rsync && dnf clean all
+RUN dnf -y install git which sudo krb5-devel jq rsync golang && dnf clean all
 ARG OLM_COMMIT
 ARG REGISTRY_COMMIT
 ARG ORIGIN_COMMIT

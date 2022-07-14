@@ -30,7 +30,7 @@ Alternativelly, type ```Ctrl+p``` then ```Ctrl+q``` to reuse the same terminal.
 
 ### Demo
 
-![asciiart](https://github.com/gustavonalle/oc-cluster-up/raw/master/demo.gif)
+![asciiart](https://github.com/carlosrobertodevops/oc-cluster-up/raw/master/demo.gif)
 
 
 ### MacOS
