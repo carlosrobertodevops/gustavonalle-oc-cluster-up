@@ -40,9 +40,11 @@ PATH=$ORIGIN_BIN:$PATH' >> /root/.bash_profile
 
 COPY patches/ /patches/
 
-RUN git clone https://github.com/operator-framework/operator-lifecycle-manager /operator-lifecycle-manager && cd /operator-lifecycle-manager && git checkout $OLM_COMMIT
+RUN git clone https://github.com/operator-framework/operator-lifecycle-manager /operator-lifecycle-manager && cd /operator-lifecycle-manager 
+## && git checkout $OLM_COMMIT
 
-RUN mkdir -p $GOPATH/src/github.com/openshift && cd $GOPATH/src/github.com/openshift && git clone https://github.com/openshift/cluster-image-registry-operator.git && cd cluster-image-registry-operator && git checkout $REGISTRY_COMMIT &&  cp -r $GOPATH/src/github.com/openshift/cluster-image-registry-operator/deploy /docker-operator/ && rm -Rf $GOPATH/src/github.com/openshift/cluster-image-registry-operator 
+RUN mkdir -p $GOPATH/src/github.com/openshift && cd $GOPATH/src/github.com/openshift && git clone https://github.com/openshift/cluster-image-registry-operator.git && cd cluster-image-registry-operator && cp -r $GOPATH/src/github.com/openshift/cluster-image-registry-operator/deploy /docker-operator/ && rm -Rf $GOPATH/src/github.com/openshift/cluster-image-registry-operator 
+## git checkout $REGISTRY_COMMIT &&
 
 WORKDIR $GOPATH/src/github.com/openshift
 RUN git clone https://github.com/openshift/origin 
