@@ -4,7 +4,7 @@
 
 Running on MacOS requires docker-machine, a docker backend that runs in a virtual machine. Follow the instructions:
 
-1) Install Docker machine following https://docs.docker.com/machine/install-machine/
+1) Install Docker machine following [https://docker-docs.netlify.app/machine/install-machine/](https://docker-docs.netlify.app/machine/install-machine/)
 
 2) Create a machine called 'default' with a decent amount of memory and disk:
 
