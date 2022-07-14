@@ -9,7 +9,7 @@ Running on MacOS requires docker-machine, a docker backend that runs in a virtua
 2) Create a machine called 'default' with a decent amount of memory and disk:
 
 ```
-docker-machine create --driver virtualbox --virtualbox-memory "4096" --virtualbox-disk-size "50000" --virtualbox-cpu-count "2"  --virtualbox-boot2docker-url https://github.com/boot2docker/boot2docker/releases/download/v17.07.0-ce/boot2docker.iso default
+docker-machine create --driver virtualbox --virtualbox-memory "4096" --virtualbox-disk-size "50000" --virtualbox-cpu-count "2"  --virtualbox-boot2docker-url https://github.com/boot2docker/boot2docker/releases/download/v19.03.12-ce/boot2docker.iso default
 ```
 
 
